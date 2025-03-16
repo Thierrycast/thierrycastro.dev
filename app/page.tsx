@@ -1,7 +1,9 @@
-import Image from "next/image";
+import HeroSection from "./components/HeroSection";
 
 export default function Home() {
   return (
-    <h1 className="text-primary-light text-3xl" >helloo</h1>
+    <main className="flex flex-col items-center">
+      <HeroSection />
+    </main>
   );
 }
