@@ -1,0 +1,62 @@
+"use client";
+import { useState } from "react";
+
+export default function TimelineSection() {
+  const experiences = [
+    {
+      company: "iFood",
+      role: "Software Engineer",
+      description:
+        "Responsável por liderar o desenvolvimento e a evolução da plataforma de suporte para restaurantes parceiros, integrando tecnologia, design e Customer Success. Meu foco era reduzir atendimentos emergenciais, implementar soluções escaláveis e refletir a evolução de problemas críticos no produto. Liderei a reestruturação do processo de alteração de dados bancários, com prioridade na prevenção de fraudes, garantindo maior segurança."
+    },
+    {
+      company: "Apple",
+      role: "Frontend Developer",
+      description:
+        "Atuei no desenvolvimento de interfaces responsivas e acessíveis para aplicações web, garantindo uma experiência fluida para milhões de usuários. Trabalhei com tecnologias modernas como React e Tailwind CSS, otimizando a performance das páginas e implementando design systems escaláveis."
+    },
+    {
+      company: "Microsoft",
+      role: "Backend Developer",
+      description:
+        "Desenvolvi APIs escaláveis para integração de serviços em nuvem, utilizando Node.js e Azure. Implementei otimizações que reduziram o tempo de resposta em 30%, melhorando a eficiência dos sistemas internos da empresa."
+    },
+    {
+      company: "Amazon",
+      role: "Full Stack Developer",
+      description:
+        "Trabalhei na construção de soluções de e-commerce altamente escaláveis, garantindo alta disponibilidade e segurança dos serviços. Colaborei na criação de novos recursos para aprimorar a experiência do usuário e melhorar as métricas de conversão da plataforma."
+    }
+  ];
+
+  const [selected, setSelected] = useState(experiences[0]);
+
+  return (
+    <section className="w-full max-w-2xl px-8 py-24 2xl:px-0">
+      <span className="text-sm font-medium bg-primary/25 px-8 py-3 rounded text-primary-light">
+        Trajetória
+      </span>
+      <h2 className="text-2xl font-semibold text-primary-light mt-6 mb-10">Experiências</h2>
+      <div className="flex gap-20">
+        <div className="flex flex-col gap-4 p-8 bg-neutral border border-neutral-light rounded-xl">
+          {experiences.map((experience, index) => (
+            <button
+              key={index}
+              className={`w-60 py-2 text-sm font-medium rounded transition-all text-white ${
+                selected.company === experience.company ? "bg-primary-light" : "bg-primary-light/25"
+              }`}
+              onClick={() => setSelected(experience)}
+            >
+              {experience.company}
+            </button>
+          ))}
+        </div>
+        <div className="pt-6" >
+          <h3 className="text-lg font-medium text-primary-light">{selected.company}</h3>
+          <p className="text-sm text-gray-300 mt-2">{selected.role}</p>
+          <p className="mt-4 text-gray-400">{selected.description}</p>
+        </div>
+      </div>
+    </section>
+  );
+}
