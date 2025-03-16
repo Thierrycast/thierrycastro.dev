@@ -1,6 +1,7 @@
 import AboutSection from "./components/AboutSection";
 import HeroSection from "./components/HeroSection";
 import ProjectsSection from "./components/ProjectsSection";
+import SkillsSection from "./components/SkillsSection";
 import TimelineSection from "./components/TimelineSection";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
       <AboutSection />
       <TimelineSection />
       <ProjectsSection />
+      <SkillsSection />
     </main>
   );
 }
