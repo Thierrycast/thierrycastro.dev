@@ -32,7 +32,7 @@ export default function TimelineSection() {
   const [selected, setSelected] = useState(experiences[0]);
 
   return (
-    <section className="w-full max-w-2xl px-8 py-24 2xl:px-0">
+    <section id="experiences" className="w-full h-screen flex flex-col items-start justify-center max-w-2xl px-8 2xl:px-0">
       <span className="text-sm font-medium bg-primary/25 px-8 py-3 rounded text-primary-light">
         Trajetória
       </span>

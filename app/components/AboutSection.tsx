@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function AboutSection() {
   return (
-    <section className="w-full max-w-2xl px-8 py-24 2xl:px-0 flex justify-between">
+    <section id="about" className="w-full h-screen max-w-2xl px-8 py-24 2xl:px-0 flex justify-between items-center">
       <div className="w-1/2" >
         <Image
           src="/profile.png"

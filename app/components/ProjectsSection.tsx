@@ -33,19 +33,17 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <section className="w-full max-w-2xl px-8 py-24 2xl:px-0 flex flex-col items-center relative">
-
-      <div className="absolute inset-0 bg-[url('/background_glow.svg')] bg-cover bg-center opacity-50 pointer-events-none"></div>
-
+    <section id="projects" className="w-full min-h-screen max-w-2xl px-8 2xl:px-0 flex flex-col items-center justify-end relative">
+      <div className="absolute inset-0 bg-[url('/background_glow.svg')] bg-cover bg-center opacity-50 pointer-events-none"/>
       <span className="text-sm font-medium bg-primary/25 px-8 py-3 rounded text-primary-light">
         Trabalhos
       </span>
-      <h2 className="text-2xl font-semibold text-primary-light mt-6 mb-20">Meus projetos</h2>
+      <h2 className="text-2xl font-semibold text-primary-light my-6">Meus projetos</h2>
 
       <div className="w-full flex justify-center flex-wrap gap-8 relative z-10">
         {projects.map((project, index) => (
-          <div className="bg-gradient-to-b from-[#964CF0] to-[#170033] rounded-xl p-0.5" >
-            <div key={index} className="flex h-full flex-col gap-5 w-80 px-4 py-6 rounded-xl bg-black backdrop-blur-md">
+          <div key={index} className="bg-gradient-to-b from-[#964CF0] to-[#170033] rounded-xl p-0.5" >
+            <div className="flex h-full flex-col gap-5 w-80 px-4 py-6 rounded-xl bg-black backdrop-blur-md">
               <div className="w-full h-36 bg-primary-light rounded-lg"></div>
               <h3 className="text-sm font-semibold">{project.title}</h3>
               <p>{project.description}</p>

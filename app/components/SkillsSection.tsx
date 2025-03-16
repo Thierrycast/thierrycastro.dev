@@ -12,7 +12,7 @@ export default function SkillsSection() {
   
 
   return (
-    <section className="w-full max-w-2xl px-8 py-24 2xl:px-0 flex flex-col items-center relative">
+    <section id="skills" className="w-full h-screen max-w-2xl px-8 2xl:px-0 flex flex-col items-center justify-center relative">
       <span className="text-sm font-medium bg-primary/25 px-8 py-3 rounded text-primary-light">
       Tecnologias
       </span>

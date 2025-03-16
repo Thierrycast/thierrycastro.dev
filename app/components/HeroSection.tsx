@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function HeroSection() {
   return (
-    <section className="w-full max-w-2xl px-8 py-24 2xl:px-0 flex justify-between">
+    <section id="home" className="w-full h-screen max-w-2xl px-8 pb-24 pt-52 2xl:px-0 flex justify-between items-center">
       <div className="w-1/2 flex flex-col justify-center">
         <p className="text-lg font-medium">Olá, eu sou</p>
         <h1 className="text-3xl font-semibold text-primary-light" >Thierry Castro</h1>
