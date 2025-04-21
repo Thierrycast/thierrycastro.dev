@@ -37,7 +37,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="w-full min-h-screen max-w-2xl px-6 sm:px-8 xl:px-0 py-24 flex flex-col items-center justify-end relative"
+      className="w-full max-w-2xl px-6 sm:px-8 xl:px-0 py-40 flex flex-col items-center justify-end relative"
     >
       <div className="absolute inset-0 bg-[url('/background_glow.svg')] bg-cover bg-center opacity-50 pointer-events-none" />
 

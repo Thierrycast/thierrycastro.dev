@@ -34,7 +34,7 @@ export default function TimelineSection() {
   return (
     <section
       id="experiences"
-      className="w-full min-h-screen flex flex-col items-start justify-center max-w-2xl px-6 sm:px-8 xl:px-0 py-24"
+      className="w-full flex flex-col items-start justify-center max-w-2xl px-6 sm:px-8 xl:px-0 py-24"
     >
       <span className="text-sm font-medium bg-primary/25 px-6 sm:px-8 py-2 rounded text-primary-light inline-block">
         Trajetória

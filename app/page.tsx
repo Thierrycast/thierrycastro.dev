@@ -14,11 +14,11 @@ export default function Home() {
         className="absolute top-0 w-full h-[750px] bg-cover bg-center -z-10"
         style={{ backgroundImage: "url('/background_galaxy.svg')" }}
       />
-      <Header />
+      <Header /> 
       <HeroSection />
       <AboutSection />
-      <TimelineSection />
       <ProjectsSection />
+      <TimelineSection />
       <SkillsSection />
       <ContactSection />
       <Footer />

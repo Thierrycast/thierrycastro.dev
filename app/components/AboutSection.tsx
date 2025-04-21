@@ -4,7 +4,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="w-full min-h-screen max-w-2xl px-6 sm:px-8 xl:px-0 py-24 flex flex-col lg:flex-row justify-between items-center gap-12 lg:gap-0"
+      className="w-full max-w-2xl px-6 sm:px-8 xl:px-0 md:py-40 flex flex-col lg:flex-row justify-between items-center gap-12 lg:gap-0"
     >
       <div className="w-full px-10 lg:w-1/2 flex justify-center">
         <Image
