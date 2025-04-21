@@ -1,22 +1,33 @@
-
 import Image from "next/image"
 
 export default function AboutSection() {
   return (
-    <section id="about" className="w-full h-screen max-w-2xl px-8 py-24 2xl:px-0 flex justify-between items-center">
-      <div className="w-1/2" >
+    <section
+      id="about"
+      className="w-full min-h-screen max-w-2xl px-6 sm:px-8 xl:px-0 py-24 flex flex-col lg:flex-row justify-between items-center gap-12 lg:gap-0"
+    >
+      <div className="w-full px-10 lg:w-1/2 flex justify-center">
         <Image
           src="/profile.png"
-          alt="rocket"
-          width={488}
-          height={488}
+          alt="Foto de perfil de Thierry"
+          width={400}
+          height={400}
+          className="max-w-full h-auto"
         />
       </div>
-      <div className="w-1/2 py-8">
-        <span className="text-sm font-medium bg-primary/25 px-8 py-3 rounded text-primary-light">Sobre mim</span>
-        
-        <h2 className="text-2xl font-semibold text-primary-light mt-6 mb-10" >Thierry Castro</h2>
-        <p className="text-sm" >Mineiro apaixonado por música e tecnologia, tenho me dedicado intensamente ao universo da programação nos últimos anos. Ao longo dessa trajetória, adquiri experiência com diversas tecnologias e frameworks, incluindo TypeScript/JavaScript e seus frameworks de backend e frontend, como Next.js, Nest.js e Svelte. </p>
+
+      <div className="w-full lg:w-1/2 py-4 text-center lg:text-left">
+        <span className="text-sm font-medium bg-primary/25 px-6 sm:px-8 py-2 rounded text-primary-light inline-block">
+          Sobre mim
+        </span>
+
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary-light mt-6 mb-6">
+          Thierry Castro
+        </h2>
+
+        <p className="text-xs sm:text-sm leading-relaxed">
+          Mineiro apaixonado por música e tecnologia, tenho me dedicado intensamente ao universo da programação nos últimos anos. Ao longo dessa trajetória, adquiri experiência com diversas tecnologias e frameworks, incluindo TypeScript/JavaScript e seus frameworks de backend e frontend, como Next.js, Nest.js e Svelte.
+        </p>
       </div>
     </section>
   )

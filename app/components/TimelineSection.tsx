@@ -32,18 +32,26 @@ export default function TimelineSection() {
   const [selected, setSelected] = useState(experiences[0]);
 
   return (
-    <section id="experiences" className="w-full h-screen flex flex-col items-start justify-center max-w-2xl px-8 2xl:px-0">
-      <span className="text-sm font-medium bg-primary/25 px-8 py-3 rounded text-primary-light">
+    <section
+      id="experiences"
+      className="w-full min-h-screen flex flex-col items-start justify-center max-w-2xl px-6 sm:px-8 xl:px-0 py-24"
+    >
+      <span className="text-sm font-medium bg-primary/25 px-6 sm:px-8 py-2 rounded text-primary-light inline-block">
         Trajetória
       </span>
-      <h2 className="text-2xl font-semibold text-primary-light mt-6 mb-10">Experiências</h2>
-      <div className="flex gap-20">
-        <div className="flex flex-col gap-4 p-8 bg-neutral border border-neutral-light rounded-xl">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary-light mt-6 mb-10">
+        Experiências
+      </h2>
+
+      <div className="flex flex-col lg:flex-row gap-10 w-full">
+        <div className="flex flex-col gap-4 p-6 bg-neutral border border-neutral-light rounded-xl w-full lg:w-1/3">
           {experiences.map((experience, index) => (
             <button
               key={index}
-              className={`w-60 py-2 text-sm font-medium rounded transition-all text-white ${
-                selected.company === experience.company ? "bg-primary-light" : "bg-primary-light/25"
+              className={`w-full py-2 text-sm font-medium rounded transition-all text-white text-left px-4 ${
+                selected.company === experience.company
+                  ? "bg-primary-light"
+                  : "bg-primary-light/25"
               }`}
               onClick={() => setSelected(experience)}
             >
@@ -51,10 +59,17 @@ export default function TimelineSection() {
             </button>
           ))}
         </div>
-        <div className="pt-6" >
-          <h3 className="text-lg font-medium text-primary-light">{selected.company}</h3>
-          <p className="text-sm text-gray-300 mt-2">{selected.role}</p>
-          <p className="mt-4 text-gray-400">{selected.description}</p>
+
+        <div className="w-full lg:w-2/3 pt-2">
+          <h3 className="text-base sm:text-lg font-medium text-primary-light">
+            {selected.company}
+          </h3>
+          <p className="text-sm sm:text-base text-gray-300 mt-2">
+            {selected.role}
+          </p>
+          <p className="mt-4 text-xs text-gray-400 leading-relaxed">
+            {selected.description}
+          </p>
         </div>
       </div>
     </section>

@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function ProjectsSection() {
   const projects = [
     {
@@ -33,20 +35,29 @@ export default function ProjectsSection() {
   ];
 
   return (
-    <section id="projects" className="w-full min-h-screen max-w-2xl px-8 2xl:px-0 flex flex-col items-center justify-end relative">
-      <div className="absolute inset-0 bg-[url('/background_glow.svg')] bg-cover bg-center opacity-50 pointer-events-none"/>
-      <span className="text-sm font-medium bg-primary/25 px-8 py-3 rounded text-primary-light">
+    <section
+      id="projects"
+      className="w-full min-h-screen max-w-2xl px-6 sm:px-8 xl:px-0 py-24 flex flex-col items-center justify-end relative"
+    >
+      <div className="absolute inset-0 bg-[url('/background_glow.svg')] bg-cover bg-center opacity-50 pointer-events-none" />
+
+      <span className="text-sm font-medium bg-primary/25 px-6 sm:px-8 py-2 rounded text-primary-light inline-block">
         Trabalhos
       </span>
-      <h2 className="text-2xl font-semibold text-primary-light my-6">Meus projetos</h2>
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary-light my-6">
+        Meus projetos
+      </h2>
 
-      <div className="w-full flex justify-center flex-wrap gap-8 relative z-10">
+      <div className="w-full flex justify-center flex-wrap gap-6 sm:gap-8 relative z-10">
         {projects.map((project, index) => (
-          <div key={index} className="bg-gradient-to-b from-[#964CF0] to-[#170033] rounded-xl p-0.5" >
-            <div className="flex h-full flex-col gap-5 w-80 px-4 py-6 rounded-xl bg-black backdrop-blur-md">
-              <div className="w-full h-36 bg-primary-light rounded-lg"></div>
+          <div
+            key={index}
+            className="bg-gradient-to-b from-[#964CF0] to-[#170033] rounded-xl p-0.5 w-full sm:w-[45%] md:w-[30%] max-w-xs"
+          >
+            <div className="flex flex-col gap-4 w-full px-4 py-6 rounded-xl bg-black backdrop-blur-md h-full">
+              <div className="w-full h-32 sm:h-36 bg-primary-light rounded-lg"></div>
               <h3 className="text-sm font-semibold">{project.title}</h3>
-              <p>{project.description}</p>
+              <p className="text-xs text-gray-400">{project.description}</p>
             </div>
           </div>
         ))}
