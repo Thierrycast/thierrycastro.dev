@@ -1,9 +1,19 @@
-"use client";
-import Image from "next/image"
-import { useEffect, useState } from "react"
-import { TbHandFinger } from "react-icons/tb";
+'use client';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { TbHandFinger } from 'react-icons/tb';
 
-export default function HeroSection() {
+type Props = {
+  labels: {
+    greeting: string;
+    name: string;
+    role: string;
+    button: string;
+    scrollHint: string;
+  };
+};
+
+export default function HeroSection({ labels }: Props) {
   const [showScrollHint, setShowScrollHint] = useState(false);
 
   useEffect(() => {
@@ -21,16 +31,16 @@ export default function HeroSection() {
       }, 3000);
     };
 
-    window.addEventListener("mousemove", handleActivity);
-    window.addEventListener("scroll", handleActivity);
-    window.addEventListener("keydown", handleActivity);
+    window.addEventListener('mousemove', handleActivity);
+    window.addEventListener('scroll', handleActivity);
+    window.addEventListener('keydown', handleActivity);
 
     timeout = setTimeout(() => setShowScrollHint(true), 3000);
 
     return () => {
-      window.removeEventListener("mousemove", handleActivity);
-      window.removeEventListener("scroll", handleActivity);
-      window.removeEventListener("keydown", handleActivity);
+      window.removeEventListener('mousemove', handleActivity);
+      window.removeEventListener('scroll', handleActivity);
+      window.removeEventListener('keydown', handleActivity);
       clearTimeout(timeout);
     };
   }, []);
@@ -41,17 +51,17 @@ export default function HeroSection() {
       className="w-full min-h-screen max-w-2xl px-6 sm:px-8 xl:px-0 pt-52 md:pt-0 flex flex-col md:flex-row justify-between items-center gap-12 md:gap-0 relative"
     >
       <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
-        <p className="text-base sm:text-lg font-medium">Olá, eu sou</p>
+        <p className="text-base sm:text-lg font-medium">{labels.greeting}</p>
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-primary-light">
-          Thierry Castro
+          {labels.name}
         </h1>
         <p className="text-base sm:text-lg mb-8 sm:mb-12 font-medium">
-          Full Stack Developer
+          {labels.role}
         </p>
 
-        <a href="">
+        <a href="https://www.linkedin.com/in/thierrycastrodev" target="_blank">
           <span className="bg-primary-dark px-6 sm:px-8 py-3 rounded text-sm font-semibold inline-block">
-            Acessar meu LinkedIn
+            {labels.button}
           </span>
         </a>
       </div>
@@ -68,7 +78,7 @@ export default function HeroSection() {
 
       <div
         className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center flex-col transition-opacity duration-500 ${
-          showScrollHint ? "opacity-100 animate-bounce" : "opacity-0"
+          showScrollHint ? 'opacity-100 animate-bounce' : 'opacity-0'
         }`}
       >
         <Image
@@ -78,15 +88,9 @@ export default function HeroSection() {
           height={24}
           className="hidden md:block"
         />
-        <TbHandFinger
-          width={24}
-          height={24}
-          className="block md:hidden"
-          color="#99a1af"
-        />
-
-        <span className="text-gray-400 text-xs mt-2">Role para ver mais</span>
+        <TbHandFinger width={24} height={24} className="block md:hidden" color="#99a1af" />
+        <span className="text-gray-400 text-xs mt-2">{labels.scrollHint}</span>
       </div>
     </section>
-  )
+  );
 }

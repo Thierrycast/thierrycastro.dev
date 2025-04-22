@@ -1,18 +1,29 @@
-"use client";
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
+'use client';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { HiMenuAlt3, HiX } from 'react-icons/hi';
 
-export default function Header() {
-  const menuItems = [
-    { name: "Início", href: "#home" },
-    { name: "Sobre mim", href: "#about" },
-    { name: "Projetos", href: "#projects" },
-    { name: "Experiências", href: "#experiences" },
-    { name: "Habilidades", href: "#skills" },
-    { name: "Contato", href: "#contact" }
-  ];
+type Props = {
+  labels: {
+    home: string;
+    about: string;
+    projects: string;
+    experiences: string;
+    skills: string;
+    contact: string;
+  };
+};
 
+const menuItems = [
+  { key: 'home', href: '#home' },
+  { key: 'about', href: '#about' },
+  { key: 'projects', href: '#projects' },
+  { key: 'experiences', href: '#experiences' },
+  { key: 'skills', href: '#skills' },
+  { key: 'contact', href: '#contact' }
+];
+
+export default function Header({ labels }: Props) {
   const [activeItem, setActiveItem] = useState(menuItems[0].href);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -29,9 +40,9 @@ export default function Header() {
       if (closest.href !== activeItem) setActiveItem(closest.href);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [activeItem, menuItems]);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [activeItem]);
 
   return (
     <header className="fixed z-50 w-full flex justify-between lg:justify-center items-center px-6 py-4 backdrop-blur border-b border-white/10">
@@ -49,16 +60,16 @@ export default function Header() {
                 <motion.div
                   layoutId="activeMenuItem"
                   className="absolute inset-0 border-2 bg-black border-primary rounded-full"
-                  transition={{ type: "spring", stiffness: 300, damping: 35 }}
+                  transition={{ type: 'spring', stiffness: 300, damping: 35 }}
                 />
               )}
               <a
                 href={item.href}
                 className={`relative w-full block rounded-full py-2 px-6 transition-all duration-800 ${
-                  activeItem === item.href ? "text-white " : "text-gray-300"
+                  activeItem === item.href ? 'text-white' : 'text-gray-300'
                 }`}
               >
-                {item.name}
+                {labels[item.key as keyof Props['labels']]}
               </a>
             </li>
           ))}
@@ -76,10 +87,10 @@ export default function Header() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.nav
-            initial={{ x: "100%" }}
+            initial={{ x: '100%' }}
             animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
+            exit={{ x: '100%' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="fixed top-0 left-0 h-screen w-full bg-cover bg-black text-white py-4 px-6 flex flex-col gap-16 lg:hidden z-40"
             style={{ backgroundImage: "url('/background_galaxy.svg')" }}
           >
@@ -87,7 +98,7 @@ export default function Header() {
               <div className="text-sm font-bold text-white">Thierry</div>
               <button
                 className="text-white text-2xl"
-                onClick={() => setMobileOpen(!mobileOpen)}
+                onClick={() => setMobileOpen(false)}
                 aria-label="Fechar menu"
               >
                 <HiX />
@@ -100,14 +111,14 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   className={`text-sm font-medium ${
-                    activeItem === item.href ? "text-primary-light" : "text-white"
+                    activeItem === item.href ? 'text-primary-light' : 'text-white'
                   }`}
                   onClick={() => {
                     setActiveItem(item.href);
                     setMobileOpen(false);
                   }}
                 >
-                  {item.name}
+                  {labels[item.key as keyof Props['labels']]}
                 </a>
               ))}
             </div>
