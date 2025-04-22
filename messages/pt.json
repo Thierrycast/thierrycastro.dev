@@ -1,0 +1,116 @@
+{
+  "Header": {
+    "home": "Início",
+    "about": "Sobre mim",
+    "projects": "Projetos",
+    "experiences": "Experiências",
+    "skills": "Habilidades",
+    "contact": "Contato"
+  },
+  "HeroSection": {
+    "greeting": "Olá, eu sou",
+    "name": "Thierry Castro",
+    "role": "Desenvolvedor Full Stack",
+    "button": "Acessar meu LinkedIn",
+    "scrollHint": "Role para ver mais"
+  },
+    "AboutSection": {
+    "profileAlt": "Foto de perfil de Thierry",
+    "badge": "Sobre mim",
+    "name": "Thierry Castro",
+    "description": "Mineiro apaixonado por música e tecnologia, tenho me dedicado intensamente ao universo da programação nos últimos anos. Ao longo dessa trajetória, adquiri experiência com diversas tecnologias e frameworks, incluindo TypeScript/JavaScript e seus frameworks de backend e frontend, como Next.js, Nest.js e Svelte."
+  },
+  "ProjectsSection": {
+    "badge": "Trabalhos",
+    "title": "Meus projetos",
+    "projects": [
+      {
+        "title": "E-commerce Moderno",
+        "description": "Uma plataforma de e-commerce otimizada para conversão e experiência do usuário."
+      },
+      {
+        "title": "Dashboard Analítico",
+        "description": "Sistema de visualização de dados em tempo real para tomada de decisões estratégicas."
+      },
+      {
+        "title": "Plataforma de Streaming",
+        "description": "Aplicação para transmissão de vídeos sob demanda com foco em performance."
+      },
+      {
+        "title": "Gestão Financeira",
+        "description": "Ferramenta de controle financeiro com relatórios personalizados."
+      },
+      {
+        "title": "Rede Social Minimalista",
+        "description": "Uma rede social focada em interações simples e sem algoritmos invasivos."
+      },
+      {
+        "title": "App de Treinos Personalizados",
+        "description": "Aplicativo que gera planos de treino personalizados com IA."
+      }
+    ]
+  },
+  "TimelineSection": {
+    "badge": "Trajetória",
+    "title": "Experiências",
+    "experiences": [
+      {
+        "company": "iFood",
+        "role": "Software Engineer",
+        "description": "Responsável por liderar o desenvolvimento e a evolução da plataforma de suporte para restaurantes parceiros, integrando tecnologia, design e Customer Success. Meu foco era reduzir atendimentos emergenciais, implementar soluções escaláveis e refletir a evolução de problemas críticos no produto. Liderei a reestruturação do processo de alteração de dados bancários, com prioridade na prevenção de fraudes, garantindo maior segurança."
+      },
+      {
+        "company": "Apple",
+        "role": "Frontend Developer",
+        "description": "Atuei no desenvolvimento de interfaces responsivas e acessíveis para aplicações web, garantindo uma experiência fluida para milhões de usuários. Trabalhei com tecnologias modernas como React e Tailwind CSS, otimizando a performance das páginas e implementando design systems escaláveis."
+      },
+      {
+        "company": "Microsoft",
+        "role": "Backend Developer",
+        "description": "Desenvolvi APIs escaláveis para integração de serviços em nuvem, utilizando Node.js e Azure. Implementei otimizações que reduziram o tempo de resposta em 30%, melhorando a eficiência dos sistemas internos da empresa."
+      },
+      {
+        "company": "Amazon",
+        "role": "Full Stack Developer",
+        "description": "Trabalhei na construção de soluções de e-commerce altamente escaláveis, garantindo alta disponibilidade e segurança dos serviços. Colaborei na criação de novos recursos para aprimorar a experiência do usuário e melhorar as métricas de conversão da plataforma."
+      }
+    ]
+  },
+  "SkillsSection": {
+    "badge": "Tecnologias",
+    "title": "Habilidades",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind",
+      "Git",
+      "Figma"
+    ]
+  },
+  "ContactSection": {
+    "badge": "Contato",
+    "title": "Fale comigo",
+    "contacts": [
+      {
+        "label": "Nome",
+        "value": "Thierry Castro"
+      },
+      {
+        "label": "E-mail",
+        "value": "thierrycastro555@gmail.com"
+      },
+      {
+        "label": "Instagram",
+        "value": "@thierry_casttro"
+      },
+      {
+        "label": "Telefone",
+        "value": "(33) 99959-5927"
+      }
+    ]
+  },
+  "Footer": {
+    "label": "Feito com muito amor ❤️"
+  }
+}

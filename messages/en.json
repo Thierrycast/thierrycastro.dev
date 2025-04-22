@@ -1,0 +1,116 @@
+{
+  "Header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "experiences": "Experience",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "HeroSection": {
+    "greeting": "Hi, I'm",
+    "name": "Thierry Castro",
+    "role": "Full Stack Developer",
+    "button": "Visit my LinkedIn",
+    "scrollHint": "Scroll down to see more"
+  },
+  "AboutSection": {
+    "profileAlt": "Profile picture of Thierry",
+    "badge": "About me",
+    "name": "Thierry Castro",
+    "description": "A Brazilian passionate about music and technology, I've been deeply dedicated to programming over the past years. During this journey, I gained experience with several technologies and frameworks including TypeScript/JavaScript, and frontend/backend tools such as Next.js, Nest.js and Svelte."
+  },
+  "ProjectsSection": {
+    "badge": "Projects",
+    "title": "My projects",
+    "projects": [
+      {
+        "title": "Modern E-commerce",
+        "description": "A conversion-optimized e-commerce platform focused on user experience."
+      },
+      {
+        "title": "Analytics Dashboard",
+        "description": "Real-time data visualization system for strategic decision-making."
+      },
+      {
+        "title": "Streaming Platform",
+        "description": "Video-on-demand application focused on high performance."
+      },
+      {
+        "title": "Financial Management",
+        "description": "Finance control tool with custom reports."
+      },
+      {
+        "title": "Minimalist Social Network",
+        "description": "A social network focused on simple interactions and no invasive algorithms."
+      },
+      {
+        "title": "Personalized Training App",
+        "description": "App that generates personalized training plans using AI."
+      }
+    ]
+  },
+  "TimelineSection": {
+    "badge": "Career Path",
+    "title": "Experiences",
+    "experiences": [
+      {
+        "company": "iFood",
+        "role": "Software Engineer",
+        "description": "Led the development and evolution of the support platform for partner restaurants, integrating tech, design and Customer Success. Focused on reducing emergency requests, implementing scalable solutions and reflecting the evolution of critical problems in the product. Led the redesign of the bank data change process, prioritizing fraud prevention and improving security."
+      },
+      {
+        "company": "Apple",
+        "role": "Frontend Developer",
+        "description": "Worked on developing responsive and accessible web interfaces for millions of users. Used modern technologies like React and Tailwind CSS, optimizing performance and implementing scalable design systems."
+      },
+      {
+        "company": "Microsoft",
+        "role": "Backend Developer",
+        "description": "Developed scalable APIs for cloud service integration using Node.js and Azure. Implemented optimizations that reduced response time by 30%, improving internal systems efficiency."
+      },
+      {
+        "company": "Amazon",
+        "role": "Full Stack Developer",
+        "description": "Built highly scalable e-commerce solutions, ensuring high availability and service security. Helped create new features to enhance user experience and improve platform conversion metrics."
+      }
+    ]
+  },
+  "SkillsSection": {
+    "badge": "Technologies",
+    "title": "Skills",
+    "skills": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind",
+      "Git",
+      "Figma"
+    ]
+  },
+  "ContactSection": {
+    "badge": "Contact",
+    "title": "Get in touch",
+    "contacts": [
+      {
+        "label": "Name",
+        "value": "Thierry Castro"
+      },
+      {
+        "label": "Email",
+        "value": "thierrycastro555@gmail.com"
+      },
+      {
+        "label": "Instagram",
+        "value": "@thierry_casttro"
+      },
+      {
+        "label": "Phone",
+        "value": "(33) 99959-5927"
+      }
+    ]
+  },
+  "Footer": {
+    "label": "Made with lots of love ❤️"
+  }
+}
