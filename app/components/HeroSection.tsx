@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { TbHandFinger } from 'react-icons/tb';
+import LanguageSwitcher from './LanguageSwitcher';
 
 type Props = {
   labels: {
@@ -50,6 +51,9 @@ export default function HeroSection({ labels }: Props) {
       id="home"
       className="w-full min-h-screen max-w-2xl px-6 sm:px-8 xl:px-0 pt-52 md:pt-0 flex flex-col md:flex-row justify-between items-center gap-12 md:gap-0 relative"
     >
+      <div className="absolute top-24 right-4">
+        <LanguageSwitcher />
+      </div>
       <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
         <p className="text-base sm:text-lg font-medium">{labels.greeting}</p>
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-primary-light">

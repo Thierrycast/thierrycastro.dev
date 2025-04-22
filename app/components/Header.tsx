@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
+import LanguageSwitcher from './LanguageSwitcher';
 
 type Props = {
   labels: {
@@ -91,7 +92,7 @@ export default function Header({ labels }: Props) {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed top-0 left-0 h-screen w-full bg-cover bg-black text-white py-4 px-6 flex flex-col gap-16 lg:hidden z-40"
+            className="fixed top-0 left-0 h-screen w-full bg-cover bg-black text-white pt-4 pb-10 px-6 flex flex-col gap-16 lg:hidden z-40"
             style={{ backgroundImage: "url('/background_galaxy.svg')" }}
           >
             <div className="flex items-center justify-between">
@@ -122,6 +123,7 @@ export default function Header({ labels }: Props) {
                 </a>
               ))}
             </div>
+            <LanguageSwitcher className="mt-auto self-end" />
           </motion.nav>
         )}
       </AnimatePresence>
