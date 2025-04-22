@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -27,6 +27,7 @@ const menuItems = [
 export default function Header({ labels }: Props) {
   const [activeItem, setActiveItem] = useState(menuItems[0].href);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const manualScrollRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,7 +39,9 @@ export default function Header({ labels }: Props) {
       });
 
       const closest = offsets.reduce((a, b) => (a.top < b.top ? a : b));
-      if (closest.href !== activeItem) setActiveItem(closest.href);
+      if (!manualScrollRef.current && closest.href !== activeItem) {
+        setActiveItem(closest.href);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -55,7 +58,13 @@ export default function Header({ labels }: Props) {
             <li
               key={item.href}
               className="relative text-xs lg:text-sm font-medium rounded-full cursor-pointer p-0.5"
-              onClick={() => setActiveItem(item.href)}
+              onClick={() => {
+                manualScrollRef.current = true;
+                setActiveItem(item.href);
+                setTimeout(() => {
+                  manualScrollRef.current = false;
+                }, 1000);
+              }}
             >
               {activeItem === item.href && (
                 <motion.div
