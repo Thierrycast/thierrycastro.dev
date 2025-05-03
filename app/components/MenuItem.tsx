@@ -16,14 +16,14 @@ export default function MenuItem({ href, label, isActive, onClick }: MenuItemPro
       {isActive && (
         <motion.div
           layoutId="activeMenuItem"
-          className="absolute inset-0 border-2 bg-black border-primary rounded-full"
+          className="absolute inset-0 border-2 bg-header border-primary rounded-full"
           transition={{ type: 'spring', stiffness: 300, damping: 35 }}
         />
       )}
       <a
         href={href}
         className={`relative w-full block rounded-full py-2 px-6 transition-all duration-800 ${
-          isActive ? 'text-white' : 'text-gray-300'
+          isActive ? 'text-white' : 'text-header-item'
         }`}
       >
         {label}

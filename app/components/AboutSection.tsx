@@ -26,11 +26,11 @@ export default function AboutSection({ labels }: Props) {
       </div>
 
       <div className="w-full lg:w-1/2 py-4 text-center lg:text-left">
-        <span className="text-sm font-medium bg-primary/25 px-6 sm:px-8 py-2 rounded text-primary-light inline-block">
+        <span className="text-sm font-medium bg-primary/25 px-6 sm:px-8 py-2 rounded text-primary-variant inline-block">
           {labels.badge}
         </span>
 
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary-light mt-6 mb-6">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary-variant mt-6 mb-6">
           {labels.name}
         </h2>
 

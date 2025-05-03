@@ -29,7 +29,7 @@ export default function LanguageSwitcher({ className = '' }: { className?: strin
     <div className={`relative ${className}`}>
       <button
         onClick={() => setOpen((prev) => !prev)}
-        className="flex items-center gap-3 text-white/80 hover:text-white transition-colors px-2 py-1 rounded-md border bg-black/30 border-white/10 hover:border-primary-light"
+        className="flex items-center gap-3 text-white/80 hover:text-white transition-colors px-2 py-1 rounded-md border bg-black/30 border-white/10 hover:border-primary-variant"
       >
         <MdTranslate size={18} />
         <span className="uppercase text-xs">{locale}</span>
@@ -48,8 +48,8 @@ export default function LanguageSwitcher({ className = '' }: { className?: strin
               <li key={loc}>
                 <button
                   onClick={() => handleSelect(loc)}
-                  className={`px-4 py-2 text-xs w-full text-left hover:bg-primary-light/10 ${
-                    loc === locale ? 'text-primary-light font-semibold' : 'text-white/80'
+                  className={`px-4 py-2 text-xs w-full text-left hover:bg-primary-variant/10 ${
+                    loc === locale ? 'text-primary-variant font-semibold' : 'text-white/80'
                   }`}
                 >
                   {loc.toUpperCase()}
