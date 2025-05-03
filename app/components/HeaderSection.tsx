@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenuAlt3 } from 'react-icons/hi';
-import MenuItem from './MenuItem';
-import MobileNav from './MobileNav';
+import MenuItem from './ui/Hero/Header/MenuItem';
+import MobileNav from './ui/Hero/Header/MobileNav';
 
 const menuItems = [
   { key: 'home', href: '#home' },

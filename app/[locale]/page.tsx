@@ -1,7 +1,7 @@
 import { getLocale } from 'next-intl/server';
 import { buildHomeLabels } from '@/i18n/buildHomeLabels';
 
-import Header from '../components/Header';
+import HeaderSection from '../components/HeaderSection';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ContactSection from '../components/ContactSection';
@@ -18,7 +18,7 @@ export default async function Home() {
   return (
     <main className="flex flex-col items-center">
       <GalaxyBackground />
-      <Header labels={labels.header} />
+      <HeaderSection labels={labels.header} />
       <HeroSection labels={labels.hero} />
       <AboutSection labels={labels.about} />
       <ProjectsSection labels={labels.projects} />
