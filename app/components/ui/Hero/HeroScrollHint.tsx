@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { TbHandFinger } from 'react-icons/tb';
+import Icon from '../../Icon';
 
 export default function HeroScrollHint({ hint }: { hint: string }) {
   const [showScrollHint, setShowScrollHint] = useState(false);
@@ -41,13 +42,7 @@ export default function HeroScrollHint({ hint }: { hint: string }) {
         showScrollHint ? 'opacity-100 animate-bounce' : 'opacity-0'
       }`}
     >
-      <img
-        src="/mouse_icon.svg"
-        alt="Scroll down"
-        width={24}
-        height={24}
-        className="hidden md:block"
-      />
+      <Icon name="mouse" size={24} className="text-header-item" />
       <TbHandFinger width={24} height={24} className="block md:hidden" color="#99a1af" />
       <span className="text-xs mt-2">{hint}</span>
     </div>
