@@ -11,7 +11,7 @@ export default function ThemeSwitcher({ className = '' }: { className?: string }
   return (
     <button
       onClick={toggleTheme}
-      className={`p-2 rounded-full bg-black/30 bordebg-black/30r border-white/10 hover:border-primary-variant transition-colors ${className}`}
+      className={`p-2 rounded-full bg-black/30 border border-white/10 hover:border-primary-variant transition-colors ${className}`}
       aria-label="Alternar tema"
     >
       {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
