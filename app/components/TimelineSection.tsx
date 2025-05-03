@@ -1,20 +1,27 @@
 'use client';
 import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 type Props = {
   labels: {
     badge: string;
     title: string;
-    experiences: {
+    companies: {
       company: string;
-      role: string;
-      description: string;
+      experiences: {
+        role: string;
+        description: string;
+      }[];
     }[];
   };
 };
 
 export default function TimelineSection({ labels }: Props) {
-  const [selected, setSelected] = useState(labels.experiences[0]);
+  const [selectedCompany, setSelectedCompany] = useState(labels.companies[0].company);
+
+  const selected = labels.companies.find(
+    (c) => c.company === selectedCompany
+  );
 
   return (
     <section
@@ -28,33 +35,54 @@ export default function TimelineSection({ labels }: Props) {
         {labels.title}
       </h2>
 
-      <div className="flex flex-col lg:flex-row gap-10 w-full">
-        <div className="flex flex-col gap-4 p-6 bg-background border border-primary-variant rounded-xl w-full lg:w-1/3">
-          {labels.experiences.map((experience, index) => (
+      <div className="flex flex-col lg:flex-row gap-10 w-full items-start">
+        <div className="flex flex-col gap-4 mt-2 p-6 bg-background border border-primary-variant rounded-xl w-full lg:w-1/3 min-h-[200px]">
+          {labels.companies.map((company, index) => (
             <button
               key={index}
-              className={`w-full py-2 text-sm font-medium rounded transition-all text-white text-left px-4 ${
-                selected.company === experience.company
-                  ? 'bg-primary-variant'
-                  : 'bg-primary-variant/25'
+              className={`w-full py-2 text-sm font-medium rounded transition-all text-left px-4 ${
+                selectedCompany === company.company
+                  ? 'bg-primary-variant text-white'
+                  : 'bg-primary-variant/25 text-primary-variant'
               }`}
-              onClick={() => setSelected(experience)}
+              onClick={() => setSelectedCompany(company.company)}
             >
-              {experience.company}
+              {company.company}
             </button>
           ))}
         </div>
 
-        <div className="w-full lg:w-2/3 pt-2">
-          <h3 className="text-base sm:text-lg font-medium text-primary-variant">
-            {selected.company}
-          </h3>
-          <p className="text-sm sm:text-base text-subtitle mt-2">
-            {selected.role}
-          </p>
-          <p className="mt-4 text-xs text-description leading-relaxed">
-            {selected.description}
-          </p>
+        <div className="w-full lg:w-2/3 min-h-[400px] h-auto transition-all duration-300">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={selected?.company}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="flex flex-col gap-2 h-full"
+            >
+              <h3 className="text-base sm:text-lg font-semibold text-primary-variant">
+                {selected?.company}
+              </h3>
+
+              <div className="relative pl-6 before:absolute before:left-[7px] before:top-[10px] before:bottom-2 before:w-[2px] before:bg-primary/25 mt-2 flex flex-col gap-6">
+                {selected?.experiences.map((experience, index) => (
+                  <div key={index} className="relative">
+                    <div className="absolute left-[-20px] top-[10px] w-2 h-2 bg-primary rounded-full z-10" />
+                    <div className="pl-2">
+                      <p className="text-xs sm:text-sm text-subtitle font-medium">
+                        {experience.role}
+                      </p>
+                      <p className="mt-1 text-xs text-description leading-relaxed">
+                        {experience.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>

@@ -68,16 +68,18 @@ export async function buildHomeLabels(locale: string) {
     timeline: {
       badge: timelineT('badge'),
       title: timelineT('title'),
-      experiences: Array.from({ length: 4 }, (_, i) => ({
-        company: timelineT(`experiences.${i}.company`),
-        role: timelineT(`experiences.${i}.role`),
-        description: timelineT(`experiences.${i}.description`)
-      }))
+      companies: (await getTranslations({ locale, namespace: 'TimelineSection' })).raw('companies') as unknown as {
+        company: string;
+        experiences: {
+          role: string;
+          description: string;
+        }[];
+      }[]
     },
 
     skills: {
       badge: skillsT('badge'),
-      title: skillsT('title'),
+      title: skillsT('title')
     },
 
     contact: {

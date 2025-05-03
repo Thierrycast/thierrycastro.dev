@@ -51,28 +51,52 @@
     ]
   },
   "TimelineSection": {
-    "badge": "Career Path",
-    "title": "Experiences",
-    "experiences": [
+    "badge": "Journey",
+    "title": "Experience",
+    "companies": [
       {
-        "company": "iFood",
-        "role": "Software Engineer",
-        "description": "Led the development and evolution of the support platform for partner restaurants, integrating tech, design and Customer Success. Focused on reducing emergency requests, implementing scalable solutions and reflecting the evolution of critical problems in the product. Led the redesign of the bank data change process, prioritizing fraud prevention and improving security."
+        "company": "Real Seguro Viagens",
+        "experiences": [
+          {
+            "role": "Full Stack Developer",
+            "description": "Currently working as a full stack developer on web applications in the travel and insurance sector. I use Ruby on Rails and Svelte to deliver scalable solutions with a focus on performance, maintainability, and user experience. I work on API integrations and continuous improvements to the user journey."
+          },
+          {
+            "role": "Full Stack Development Intern",
+            "description": "As an intern, I actively participated in the full software development cycle, from requirements analysis to deployment. I worked with Ruby on Rails and Svelte, solidifying my skills in both backend and frontend through real product development."
+          }
+        ]
       },
       {
-        "company": "Apple",
-        "role": "Frontend Developer",
-        "description": "Worked on developing responsive and accessible web interfaces for millions of users. Used modern technologies like React and Tailwind CSS, optimizing performance and implementing scalable design systems."
+        "company": "Cubos Academy",
+        "experiences": [
+          {
+            "role": "Full Stack Mentor",
+            "description": "Provided personalized technical support to students in the Software Development program. Helped resolve frontend, backend, and programming logic questions, and contributed with code reviews and best practice guidance."
+          },
+          {
+            "role": "Technical Interviewer",
+            "description": "Conducted technical interviews with development candidates, evaluating problem-solving, code structure, and clarity. Provided constructive feedback to support individual improvement."
+          }
+        ]
       },
       {
-        "company": "Microsoft",
-        "role": "Backend Developer",
-        "description": "Developed scalable APIs for cloud service integration using Node.js and Azure. Implemented optimizations that reduced response time by 30%, improving internal systems efficiency."
+        "company": "Freelancer",
+        "experiences": [
+          {
+            "role": "Full Stack Developer",
+            "description": "I work as a freelancer building complete web solutions—from robust APIs to responsive, modern interfaces. I use current technologies like React, Next.js, Node.js, NestJS, Tailwind CSS, Svelte, among others. I handle diverse projects autonomously with a strong focus on performance, clear architecture, and high-quality delivery."
+          }
+        ]
       },
       {
-        "company": "Amazon",
-        "role": "Full Stack Developer",
-        "description": "Built highly scalable e-commerce solutions, ensuring high availability and service security. Helped create new features to enhance user experience and improve platform conversion metrics."
+        "company": "Technology Education",
+        "experiences": [
+          {
+            "role": "Systems Analysis and Development",
+            "description": "Higher education focused on object-oriented programming, web development, relational databases, data structures, computational logic, and software engineering. Complements my hands-on experience with solid technical foundations."
+          }
+        ]
       }
     ]
   },

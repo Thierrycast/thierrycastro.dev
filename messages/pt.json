@@ -53,26 +53,50 @@
   "TimelineSection": {
     "badge": "Trajetória",
     "title": "Experiências",
-    "experiences": [
+    "companies": [
       {
-        "company": "iFood",
-        "role": "Software Engineer",
-        "description": "Responsável por liderar o desenvolvimento e a evolução da plataforma de suporte para restaurantes parceiros, integrando tecnologia, design e Customer Success. Meu foco era reduzir atendimentos emergenciais, implementar soluções escaláveis e refletir a evolução de problemas críticos no produto. Liderei a reestruturação do processo de alteração de dados bancários, com prioridade na prevenção de fraudes, garantindo maior segurança."
+        "company": "Real Seguro Viagens",
+        "experiences": [
+          {
+            "role": "Desenvolvedor Full Stack",
+            "description": "Atualmente atuo como desenvolvedor full stack em aplicações web na área de turismo e seguros. Utilizo Ruby on Rails e Svelte para entregar soluções escaláveis, com foco em performance, manutenção e experiência do usuário. Trabalho com integração de APIs e melhorias constantes no fluxo do usuário."
+          },
+          {
+            "role": "Estagiário em Desenvolvimento Full Stack",
+            "description": "Durante o estágio, participei ativamente do ciclo completo de desenvolvimento de software, desde análise de requisitos até o deploy. Atuei com Ruby on Rails e Svelte, consolidando conhecimentos em backend e frontend com foco em produtos reais."
+          }
+        ]
       },
       {
-        "company": "Apple",
-        "role": "Frontend Developer",
-        "description": "Atuei no desenvolvimento de interfaces responsivas e acessíveis para aplicações web, garantindo uma experiência fluida para milhões de usuários. Trabalhei com tecnologias modernas como React e Tailwind CSS, otimizando a performance das páginas e implementando design systems escaláveis."
+        "company": "Cubos Academy",
+        "experiences": [
+          {
+            "role": "Monitor de Desenvolvimento Full Stack",
+            "description": "Ofereci suporte técnico personalizado a alunos do curso de Desenvolvimento de Software. Auxiliei na resolução de dúvidas em frontend, backend e lógica de programação, além de contribuir com revisões e boas práticas."
+          },
+          {
+            "role": "Entrevistador Técnico",
+            "description": "Realizei entrevistas técnicas com candidatos à formação de desenvolvimento, avaliando lógica, estruturação de código e clareza nas soluções. Forneci feedbacks construtivos visando evolução individual."
+          }
+        ]
       },
       {
-        "company": "Microsoft",
-        "role": "Backend Developer",
-        "description": "Desenvolvi APIs escaláveis para integração de serviços em nuvem, utilizando Node.js e Azure. Implementei otimizações que reduziram o tempo de resposta em 30%, melhorando a eficiência dos sistemas internos da empresa."
+        "company": "Freelancer",
+        "experiences": [
+          {
+            "role": "Desenvolvedor Full Stack",
+            "description": "Atuo como freelancer desenvolvendo soluções web completas, desde APIs robustas até interfaces modernas e responsivas. Utilizo tecnologias atuais como React, Next.js, Node.js, NestJS, Tailwind CSS, Svelte, entre outras. Atendo projetos variados de forma autônoma, com foco em performance, arquitetura bem definida e entregas de alta qualidade."
+          }
+        ]
       },
       {
-        "company": "Amazon",
-        "role": "Full Stack Developer",
-        "description": "Trabalhei na construção de soluções de e-commerce altamente escaláveis, garantindo alta disponibilidade e segurança dos serviços. Colaborei na criação de novos recursos para aprimorar a experiência do usuário e melhorar as métricas de conversão da plataforma."
+        "company": "Formação em Tecnologia",
+        "experiences": [
+          {
+            "role": "Análise e Desenvolvimento de Sistemas",
+            "description": "Formação superior com foco em programação orientada a objetos, desenvolvimento web, bancos de dados relacionais, estruturas de dados, lógica computacional e engenharia de software. Complementa minha vivência prática com fundamentos sólidos da área."
+          }
+        ]
       }
     ]
   },
