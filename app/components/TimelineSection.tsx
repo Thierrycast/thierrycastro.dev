@@ -56,6 +56,7 @@ export default function TimelineSection({ labels }: Props) {
           <AnimatePresence mode="wait">
             <motion.div
               key={selected?.company}
+              layout
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
@@ -66,11 +67,21 @@ export default function TimelineSection({ labels }: Props) {
                 {selected?.company}
               </h3>
 
-              <div className="relative pl-6 before:absolute before:left-[7px] before:top-[10px] before:bottom-2 before:w-[2px] before:bg-primary/25 mt-2 flex flex-col gap-6">
-                {selected?.experiences.map((experience, index) => (
-                  <div key={index} className="relative">
-                    <div className="absolute left-[-20px] top-[10px] w-2 h-2 bg-primary rounded-full z-10" />
-                    <div className="pl-2">
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.3, ease: 'easeOut' }}
+                className="relative pl-6 mt-2"
+              >
+                <div className="flex flex-col gap-6">
+                  {selected?.experiences.map((experience, index) => (
+                    <div key={index} className="relative pl-2">
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ delay: 0.8 + index * 0.05, duration: 0.2 }}
+                        className="absolute left-[-20px] top-[10px] w-2 h-2 bg-primary rounded-full z-10"
+                      />
                       <p className="text-xs sm:text-sm text-subtitle font-medium">
                         {experience.role}
                       </p>
@@ -78,9 +89,16 @@ export default function TimelineSection({ labels }: Props) {
                         {experience.description}
                       </p>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+                <motion.div
+                  key={`line-${selected?.company}`}
+                  initial={{ scaleY: 0 }}
+                  animate={{ scaleY: 1 }}
+                  transition={{ delay: 0.5, duration: 0.4, ease: 'easeInOut' }}
+                  className="absolute left-[7px] top-[10px] bottom-2 w-[2px] bg-primary/25 origin-bottom"
+                />
+              </motion.div>
             </motion.div>
           </AnimatePresence>
         </div>
