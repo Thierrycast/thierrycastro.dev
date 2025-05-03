@@ -1,56 +1,150 @@
 @import "tailwindcss";
 
+/* Modo Claro */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Cores principais */
+  --color-background: #f8f7fc;
+  --color-foreground: #1a1a1a;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-primary: #7F56D9;
+  --color-primary-variant: #6941C6;
+  --color-primary-emphasis: #6941C6;
 
-  /* FONTES */
+  /* Cores auxiliares */
+  --color-surface: #e5e5e5;
+  --color-surface-contrast: #533699;
+  --color-neutral: #161616;
+
+  /* Cores de conteúdo */
+  --color-header: #7F56D9;
+  --color-header-item: #7F56D9;
+  --color-description: #000000;
+  --color-subtitle: #6941C6;
+
+  /* Fontes */
   --font-sans: var(--font-montserrat);
   --font-mono: var(--font-geist-mono);
 
-  /* CORES */
-  --color-primary: #5a3e9e; /* Roxo médio */
-  --color-primary-dark: #4c1b6f; /* Roxo intenso */
-  --color-primary-light: #b569eb; /* Lavanda intensa */
+  /* Tipografia */
+  --text-xs: 1rem;
+  --text-sm: 1.25rem;
+  --text-base: 1.5rem;
+  --text-lg: 2rem;
+  --text-xl: 2.5rem;
+  --text-2xl: 3rem;
+  --text-3xl: 3.5rem;
 
-  --color-neutral: #161616; /* Cinza carvão */
-  --color-neutral-light: #2e2f34; /* Cinza azulado escuro */
-  --color-neutral-dark: #1A0B2E; /* roxo escuro profundo */
-
-  --color-accent: #ff8b7b; /* Salmão claro */
-  --color-accent-dark: #ba4d3c; /* Vermelho alaranjado */
-
-  /* TIPOGRAFIA */
-  --text-xs: 1rem;       /* 16px */
-  --text-sm: 1.25rem;    /* 20px */
-  --text-base: 1.5rem;   /* 24px */
-  --text-lg: 2rem;       /* 32px */
-  --text-xl: 2.5rem;     /* 40px */
-  --text-2xl: 3rem;      /* 48px */
-  --text-3xl: 3.5rem;    /* 56px */
-
-  /* LAYOUT */
+  /* Layout */
   --max-width-2xl: 77rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #050505;
-    --foreground: #ededed;
-  }
+/* Modo Escuro */
+html.dark {
+  --color-background: #050505;
+  --color-foreground: #f1f1f1;
+
+  --color-primary: #5a3e9e;
+  --color-primary-variant: #b569eb;
+  --color-primary-emphasis: #4c1b6f;
+
+  --color-surface: #e5e5e5;
+  --color-surface-contrast: #1A0B2E;
+  --color-neutral: #161616;
+
+  --color-header: #050505;
+  --color-header-item: #d1d5dc;
+  --color-description: #99a1af;
+  --color-subtitle: #FFFFFF;
 }
 
+/* TAILWIND */
+@theme inline {
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --color-primary: var(--color-primary);
+  --color-primary-variant: var(--color-primary-variant);
+  --color-primary-emphasis: var(--color-primary-emphasis);
+
+  --color-surface: var(--color-surface);
+  --color-surface-contrast: var(--color-surface-contrast);
+  --color-neutral: var(--color-neutral);
+
+  --color-header: var(--color-header);
+  --color-header-item: var(--color-header-item);
+  --color-description: var(--color-description);
+  --color-subtitle: var(--color-subtitle);
+
+  --text-xs: var(--text-xs);
+  --text-sm: var(--text-sm);
+  --text-base: var(--text-base);
+  --text-lg: var(--text-lg);
+  --text-xl: var(--text-xl);
+  --text-2xl: var(--text-2xl);
+  --text-3xl: var(--text-3xl);
+
+  --max-width-2xl: var(--max-width-2xl);
+}
+
+/* ESTILOS GLOBAIS */
 html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-background);
+  color: var(--color-foreground);
   font-family: var(--font-sans), sans-serif;
+}
+
+/* (IMAGENS E GRADIENTES) */
+
+/* Background Galaxy */
+.bg-galaxy {
+  background-image: url('/background_galaxy_light.svg');
+  background-size: cover;
+  background-position: center;
+}
+html.dark .bg-galaxy {
+  background-image: url('/background_galaxy.svg');
+}
+
+/* Foguete do HeroSection */
+.rocket {
+  background-image: url('/rocket_light.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 300px;
+  height: 300px;
+}
+html.dark .rocket {
+  background-image: url('/rocket.svg');
+}
+
+/*  Glow dos projetos */
+.bg-project-glow {
+  background-image: url('/background_glow_light.svg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  pointer-events: none;
+}
+html.dark .bg-project-glow {
+  background-image: url('/background_glow.svg');
+}
+
+/* 📦 Gradiente de borda reativo */
+.card-gradient-border {
+  background-image: linear-gradient(to bottom, #a278f4, #ffffff);
+}
+html.dark .card-gradient-border {
+  background-image: linear-gradient(to bottom, #964CF0, #170033);
 }
