@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { HiX } from 'react-icons/hi';
-import LanguageSwitcher from '../../../LanguageSwitcher';
+import LanguageSwitcher from '../../LanguageSwitcher';
 
 type MobileNavProps = {
   activeItem: string;
