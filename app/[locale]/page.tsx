@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 import ProjectsSection from '../components/ProjectsSection';
 import SkillsSection from '../components/SkillsSection';
 import TimelineSection from '../components/TimelineSection';
+import GalaxyBackground from '../components/GalaxyBackground';
 
 export default async function Home() {
   const locale = await getLocale();
@@ -16,10 +17,7 @@ export default async function Home() {
 
   return (
     <main className="flex flex-col items-center">
-      <div
-        className="absolute top-0 w-full h-[750px] bg-cover bg-center -z-10"
-        style={{ backgroundImage: "url('/background_galaxy.svg')" }}
-      />
+      <GalaxyBackground />
       <Header labels={labels.header} />
       <HeroSection labels={labels.hero} />
       <AboutSection labels={labels.about} />
