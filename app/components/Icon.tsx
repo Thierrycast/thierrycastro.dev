@@ -1,8 +1,15 @@
 import React from "react";
-import icons from "@/data/icons.json";
+import rawIcons from "@/data/icons.json";
+
+type IconData = {
+  viewBox: string;
+  content: string;
+};
+
+const icons: Record<string, IconData> = rawIcons;
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {
-  name: keyof typeof icons;
+  name: string;
   size?: number | string;
   color?: string;
   className?: string;
@@ -16,10 +23,28 @@ export default function Icon({
   ...rest
 }: IconProps) {
   const icon = icons[name];
-
-  if (!icon) return null;
-
   const computedSize = typeof size === "number" ? `${size}px` : size;
+
+  if (!icon) {
+    return (
+      <div
+        style={{
+          width: computedSize,
+          height: computedSize,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          border: "1px dashed currentColor",
+          borderRadius: "0.5rem",
+          fontSize: "0.7rem",
+          color,
+        }}
+        className={`text-[10px] text-center ${className}`}
+      >
+        {name}
+      </div>
+    );
+  }
 
   return (
     <svg

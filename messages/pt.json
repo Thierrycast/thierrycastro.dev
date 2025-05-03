@@ -78,15 +78,7 @@
   },
   "SkillsSection": {
     "badge": "Tecnologias",
-    "title": "Habilidades",
-    "skills": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "Tailwind",
-      "Git",
-      "Figma"
-    ]
+    "title": "Habilidades"
   },
   "ContactSection": {
     "badge": "Contato",

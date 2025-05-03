@@ -78,7 +78,6 @@ export async function buildHomeLabels(locale: string) {
     skills: {
       badge: skillsT('badge'),
       title: skillsT('title'),
-      skills: Array.from({ length: 6 }, (_, i) => skillsT(`skills.${i}`))
     },
 
     contact: {

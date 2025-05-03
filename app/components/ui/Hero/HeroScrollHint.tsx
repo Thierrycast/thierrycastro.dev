@@ -42,8 +42,8 @@ export default function HeroScrollHint({ hint }: { hint: string }) {
         showScrollHint ? 'opacity-100 animate-bounce' : 'opacity-0'
       }`}
     >
-      <Icon name="mouse" size={24} className="text-header-item" />
-      <TbHandFinger width={24} height={24} className="block md:hidden" color="#99a1af" />
+      <Icon name="mouse" size={24} className="text-header-item hidden md:block" />
+      <TbHandFinger width={30} height={30} className="text-header-item block md:hidden" />
       <span className="text-xs mt-2">{hint}</span>
     </div>
   );
