@@ -1,9 +1,7 @@
 @import "tailwindcss";
 
 /* Modo Claro */
-
 :root {
-  /* Cores principais */
   --color-background: #f8f7fc;
   --color-foreground: #1a1a1a;
 
@@ -11,22 +9,18 @@
   --color-primary-variant: #6941C6;
   --color-primary-emphasis: #6941C6;
 
-  /* Cores auxiliares */
   --color-surface: #e5e5e5;
   --color-surface-contrast: #533699;
   --color-neutral: #161616;
 
-  /* Cores de conteúdo */
   --color-header: #7F56D9;
   --color-header-item: #7F56D9;
   --color-description: #000000;
   --color-subtitle: #6941C6;
 
-  /* Fontes */
   --font-sans: var(--font-montserrat);
   --font-mono: var(--font-geist-mono);
 
-  /* Tipografia */
   --text-xs: 1rem;
   --text-sm: 1.25rem;
   --text-base: 1.5rem;
@@ -35,7 +29,6 @@
   --text-2xl: 3rem;
   --text-3xl: 3.5rem;
 
-  /* Layout */
   --max-width-2xl: 77rem;
 }
 
@@ -104,44 +97,7 @@ body {
   font-family: var(--font-sans), sans-serif;
 }
 
-/* (IMAGENS E GRADIENTES) */
-
-/* Background Galaxy */
-.bg-galaxy {
-  background-image: url('/background_galaxy_light.svg');
-  background-size: cover;
-  background-position: center;
-}
-html.dark .bg-galaxy {
-  background-image: url('/background_galaxy.svg');
-}
-
-/* Foguete do HeroSection */
-.rocket {
-  background-image: url('/rocket_light.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 300px;
-  height: 300px;
-}
-html.dark .rocket {
-  background-image: url('/rocket.svg');
-}
-
-/*  Glow dos projetos */
-.bg-project-glow {
-  background-image: url('/background_glow_light.svg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.5;
-  pointer-events: none;
-}
-html.dark .bg-project-glow {
-  background-image: url('/background_glow.svg');
-}
-
-/* 📦 Gradiente de borda reativo */
+/* Gradiente de borda reativo */
 .card-gradient-border {
   background-image: linear-gradient(to bottom, #a278f4, #ffffff);
 }

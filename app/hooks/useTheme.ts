@@ -35,7 +35,6 @@ export function useTheme(): [Theme, () => void, boolean] {
     setTheme(newTheme);
     document.documentElement.classList.toggle('dark', newTheme === 'dark');
 
-    // Dispara evento global para outros components ouvirem
     window.dispatchEvent(new Event('theme-change'));
   };
 

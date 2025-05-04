@@ -1,17 +1,23 @@
 'use client';
 
 import Image from 'next/image';
-import { useTheme } from 'next-themes';
+import { useTheme } from '../hooks/useTheme';
 
 export default function GalaxyBackground() {
-  const { theme } = useTheme();
+  const [theme, , mounted] = useTheme();
 
-  const isDark = theme === 'dark';
+  if (!mounted) return null;
+
+  const imageSrc =
+    theme === 'dark'
+      ? '/background_galaxy.svg'
+      : '/background_galaxy_light.svg';
 
   return (
     <div className="absolute top-0 w-full h-[750px] -z-10 transition-all duration-300">
       <Image
-        src={isDark ? '/background_galaxy.svg' : '/background_galaxy_light.svg'}
+        key={theme}
+        src={imageSrc}
         alt=""
         fill
         priority

@@ -1,4 +1,7 @@
+'use client';
+
 import Image from 'next/image';
+import { useTheme } from '../hooks/useTheme';
 
 type Props = {
   labels: {
@@ -13,17 +16,35 @@ type Props = {
 };
 
 export default function ProjectsSection({ labels }: Props) {
+  const [theme, , mounted] = useTheme();
+
+  if (!mounted) return null;
+
+  const glowSrc =
+    theme === 'dark'
+      ? '/background_glow.svg'
+      : '/background_glow_light.svg';
+
   return (
     <section
       id="projects"
       className="w-full max-w-2xl px-6 sm:px-8 xl:px-0 py-40 flex flex-col items-center justify-end relative"
     >
-      <div className="absolute inset-0 bg-project-glow" />
+      <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
+        <Image
+          key={theme}
+          src={glowSrc}
+          alt=""
+          fill
+          quality={85}
+          className="object-cover object-center"
+        />
+      </div>
 
-      <span className="text-sm font-medium bg-primary/25 px-6 sm:px-8 py-2 rounded text-primary-variant inline-block">
+      <span className="text-sm font-medium bg-primary/25 px-6 sm:px-8 py-2 rounded text-primary-variant inline-block z-10">
         {labels.badge}
       </span>
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary-variant my-6">
+      <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-primary-variant my-6 z-10">
         {labels.title}
       </h2>
 
