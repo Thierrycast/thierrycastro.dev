@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { TbHandFinger } from 'react-icons/tb';
 import Icon from '../../Icon';
 
 export default function HeroScrollHint({ hint }: { hint: string }) {
@@ -43,7 +42,7 @@ export default function HeroScrollHint({ hint }: { hint: string }) {
       }`}
     >
       <Icon name="mouse" size={24} className="text-header-item hidden md:block" />
-      <TbHandFinger width={30} height={30} className="text-header-item block md:hidden" />
+      <Icon name="finger" size={24} className="text-header-item block md:hidden" />
       <span className="text-xs mt-2">{hint}</span>
     </div>
   );

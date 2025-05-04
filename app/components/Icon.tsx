@@ -6,6 +6,7 @@ type IconData = {
   content: string;
 };
 
+
 const icons: Record<string, IconData> = rawIcons;
 
 interface IconProps extends React.SVGProps<SVGSVGElement> {

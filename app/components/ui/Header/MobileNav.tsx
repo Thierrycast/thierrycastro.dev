@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { HiX } from 'react-icons/hi';
+import Icon from '../../Icon';
 import LanguageSwitcher from '../../LanguageSwitcher';
 import ThemeSwitcher from '../../ThemeSwitcher';
 
@@ -55,7 +55,7 @@ export default function MobileNav({
             onClick={() => setMobileOpen(false)}
             aria-label="Fechar menu"
           >
-            <HiX />
+            <Icon name="close" />
           </button>
         </div>
 

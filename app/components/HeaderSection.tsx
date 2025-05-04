@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { HiMenuAlt3 } from 'react-icons/hi';
+import {AnimatePresence } from 'framer-motion';
+import Icon from './Icon';  
 import MenuItem from './ui/Header/MenuItem';
 import MobileNav from './ui/Header/MobileNav';
 
@@ -77,7 +77,7 @@ export default function Header({ labels }: Props) {
         onClick={() => setMobileOpen(!mobileOpen)}
         aria-label="Abrir menu"
       >
-        <HiMenuAlt3 />
+        <Icon name="menu" />
       </button>
 
       <AnimatePresence>

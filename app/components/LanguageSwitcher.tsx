@@ -2,7 +2,7 @@
 
 import { useState, useTransition } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { MdTranslate } from 'react-icons/md';
+import Icon from './Icon';
 import { motion, AnimatePresence } from 'framer-motion';
 
 type Props = {
@@ -36,7 +36,7 @@ export default function LanguageSwitcher({ className = '', direction = 'down' }:
         onClick={() => setOpen((prev) => !prev)}
         className="flex items-center gap-3 text-white/80 hover:text-white transition-colors px-2 py-1 rounded-md border bg-black/30 border-white/10 hover:border-primary-variant"
       >
-        <MdTranslate size={18} />
+        <Icon name ="translate" size={18} />
         <span className="uppercase text-xs">{locale}</span>
       </button>
 
