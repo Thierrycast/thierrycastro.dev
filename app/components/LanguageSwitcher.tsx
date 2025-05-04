@@ -5,7 +5,12 @@ import { useRouter, usePathname } from 'next/navigation';
 import { MdTranslate } from 'react-icons/md';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function LanguageSwitcher({ className = '' }: { className?: string }) {
+type Props = {
+  className?: string;
+  direction?: 'up' | 'down';
+};
+
+export default function LanguageSwitcher({ className = '', direction = 'down' }: Props) {
   const [open, setOpen] = useState(false);
   const [isPending, startTransition] = useTransition();
 
@@ -38,11 +43,13 @@ export default function LanguageSwitcher({ className = '' }: { className?: strin
       <AnimatePresence>
         {open && (
           <motion.ul
-            initial={{ opacity: 0, y: 4 }}
+            initial={{ opacity: 0, y: direction === 'up' ? -4 : 4 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 4 }}
+            exit={{ opacity: 0, y: direction === 'up' ? -4 : 4 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 mt-1 bg-black/30 border border-white/10 rounded shadow-lg z-50"
+            className={`absolute right-0 z-50 bg-black/30 border border-white/10 rounded shadow-lg ${
+              direction === 'up' ? 'bottom-full mb-1' : 'top-full mt-1'
+            }`}
           >
             {availableLocales.map((loc) => (
               <li key={loc}>

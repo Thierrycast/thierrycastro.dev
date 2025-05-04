@@ -1,6 +1,7 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
+import { themeInitScript } from '../utils/theme-init';
 
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
@@ -32,6 +33,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={montserrat.variable}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="antialiased">
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
