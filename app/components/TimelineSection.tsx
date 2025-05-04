@@ -1,6 +1,8 @@
 'use client';
+
 import { useState } from 'react';
-import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
+import LazyMotionWrapper from '../components/animations/LazyMotionWrapper';
 
 type Props = {
   labels: {
@@ -18,10 +20,7 @@ type Props = {
 
 export default function TimelineSection({ labels }: Props) {
   const [selectedCompany, setSelectedCompany] = useState(labels.companies[0].company);
-
-  const selected = labels.companies.find(
-    (c) => c.company === selectedCompany
-  );
+  const selected = labels.companies.find((c) => c.company === selectedCompany);
 
   return (
     <section
@@ -53,7 +52,7 @@ export default function TimelineSection({ labels }: Props) {
         </div>
 
         <div className="w-full lg:w-2/3 min-h-[400px] h-auto transition-all duration-300">
-          <LazyMotion features={domAnimation}>
+          <LazyMotionWrapper>
             <AnimatePresence mode="wait">
               <m.div
                 key={selected?.company}
@@ -102,7 +101,7 @@ export default function TimelineSection({ labels }: Props) {
                 </m.div>
               </m.div>
             </AnimatePresence>
-          </LazyMotion>
+          </LazyMotionWrapper>
         </div>
       </div>
     </section>

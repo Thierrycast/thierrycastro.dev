@@ -1,8 +1,9 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import {AnimatePresence } from 'framer-motion';
-import Icon from './Icon';  
+import { AnimatePresence } from 'framer-motion';
+import LazyMotionWrapper from '../components/animations/LazyMotionWrapper';
+import Icon from './Icon';
 import MenuItem from './ui/Header/MenuItem';
 import MobileNav from './ui/Header/MobileNav';
 
@@ -80,17 +81,19 @@ export default function Header({ labels }: Props) {
         <Icon name="menu" />
       </button>
 
-      <AnimatePresence>
-        {mobileOpen && (
-          <MobileNav
-            activeItem={activeItem}
-            setActiveItem={setActiveItem}
-            setMobileOpen={setMobileOpen}
-            labels={labels}
-            menuItems={menuItems}
-          />
-        )}
-      </AnimatePresence>
+      <LazyMotionWrapper>
+        <AnimatePresence>
+          {mobileOpen && (
+            <MobileNav
+              activeItem={activeItem}
+              setActiveItem={setActiveItem}
+              setMobileOpen={setMobileOpen}
+              labels={labels}
+              menuItems={menuItems}
+            />
+          )}
+        </AnimatePresence>
+      </LazyMotionWrapper>
     </header>
   );
 }

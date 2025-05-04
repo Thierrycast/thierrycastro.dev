@@ -1,3 +1,6 @@
+export const dynamic = 'force-static';
+export const revalidate = false;
+
 import { getLocale } from 'next-intl/server';
 import { buildHomeLabels } from '@/i18n/buildHomeLabels';
 

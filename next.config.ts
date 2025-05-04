@@ -9,6 +9,7 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  swcMinify: true
 };
 
 export default withBundleAnalyzer(withNextIntl(nextConfig));
