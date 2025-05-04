@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion';
 
 type Props = {
   labels: {
@@ -53,54 +53,56 @@ export default function TimelineSection({ labels }: Props) {
         </div>
 
         <div className="w-full lg:w-2/3 min-h-[400px] h-auto transition-all duration-300">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={selected?.company}
-              layout
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              transition={{ duration: 0.3 }}
-              className="flex flex-col gap-2 h-full"
-            >
-              <h3 className="text-base sm:text-lg font-semibold text-primary-variant">
-                {selected?.company}
-              </h3>
-
-              <motion.div
+          <LazyMotion features={domAnimation}>
+            <AnimatePresence mode="wait">
+              <m.div
+                key={selected?.company}
+                layout
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.3, ease: 'easeOut' }}
-                className="relative pl-6 mt-2"
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+                className="flex flex-col gap-2 h-full"
               >
-                <div className="flex flex-col gap-6">
-                  {selected?.experiences.map((experience, index) => (
-                    <div key={index} className="relative pl-2">
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: 0.8 + index * 0.05, duration: 0.2 }}
-                        className="absolute left-[-20px] top-[10px] w-2 h-2 bg-primary rounded-full z-10"
-                      />
-                      <p className="text-xs sm:text-sm text-subtitle font-medium">
-                        {experience.role}
-                      </p>
-                      <p className="mt-1 text-xs text-description leading-relaxed">
-                        {experience.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <motion.div
-                  key={`line-${selected?.company}`}
-                  initial={{ scaleY: 0 }}
-                  animate={{ scaleY: 1 }}
-                  transition={{ delay: 0.5, duration: 0.4, ease: 'easeInOut' }}
-                  className="absolute left-[7px] top-[10px] bottom-2 w-[2px] bg-primary/25 origin-bottom"
-                />
-              </motion.div>
-            </motion.div>
-          </AnimatePresence>
+                <h3 className="text-base sm:text-lg font-semibold text-primary-variant">
+                  {selected?.company}
+                </h3>
+
+                <m.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2, duration: 0.3, ease: 'easeOut' }}
+                  className="relative pl-6 mt-2"
+                >
+                  <div className="flex flex-col gap-6">
+                    {selected?.experiences.map((experience, index) => (
+                      <div key={index} className="relative pl-2">
+                        <m.div
+                          initial={{ scale: 0 }}
+                          animate={{ scale: 1 }}
+                          transition={{ delay: 0.8 + index * 0.05, duration: 0.2 }}
+                          className="absolute left-[-20px] top-[10px] w-2 h-2 bg-primary rounded-full z-10"
+                        />
+                        <p className="text-xs sm:text-sm text-subtitle font-medium">
+                          {experience.role}
+                        </p>
+                        <p className="mt-1 text-xs text-description leading-relaxed">
+                          {experience.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                  <m.div
+                    key={`line-${selected?.company}`}
+                    initial={{ scaleY: 0 }}
+                    animate={{ scaleY: 1 }}
+                    transition={{ delay: 0.5, duration: 0.4, ease: 'easeInOut' }}
+                    className="absolute left-[7px] top-[10px] bottom-2 w-[2px] bg-primary/25 origin-bottom"
+                  />
+                </m.div>
+              </m.div>
+            </AnimatePresence>
+          </LazyMotion>
         </div>
       </div>
     </section>
