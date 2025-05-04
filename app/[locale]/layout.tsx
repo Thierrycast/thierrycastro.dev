@@ -32,7 +32,7 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale} className={montserrat.variable}>
+    <html lang={locale} className={montserrat.variable} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>

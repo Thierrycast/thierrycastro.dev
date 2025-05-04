@@ -21,6 +21,7 @@ export default function AboutSection({ labels }: Props) {
           alt={labels.profileAlt}
           width={400}
           height={400}
+          priority
           className="max-w-full h-auto"
         />
       </div>

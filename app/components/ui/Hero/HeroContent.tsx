@@ -9,7 +9,8 @@ type Props = {
 
 export default function HeroContent({ labels }: Props) {
   return (
-    <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
+    <div className="flex w-full md:w-1/2 flex-col justify-center items-center">
+      <div className="text-center md:text-left" >
       <p className="text-base sm:text-lg font-medium">{labels.greeting}</p>
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-primary-variant">
         {labels.name}
@@ -22,6 +23,7 @@ export default function HeroContent({ labels }: Props) {
           {labels.button}
         </span>
       </a>
+      </div>
     </div>
   );
 }

@@ -1,15 +1,17 @@
 export const themeInitScript = `
-(function() {
+(function () {
   try {
     var theme = localStorage.getItem('theme');
-    if (
-      theme === 'dark' || 
-      (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
+    if (!theme) {
+      theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
-  } catch (_) {}
+  } catch (e) {
+    console.error('Theme script error:', e);
+  }
 })();
 `;

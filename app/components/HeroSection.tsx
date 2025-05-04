@@ -19,7 +19,7 @@ export default function HeroSection({ labels }: Props) {
   return (
     <section
       id="home"
-      className="w-full min-h-screen max-w-2xl px-6 sm:px-8 xl:px-0 pt-52 md:pt-0 flex flex-col md:flex-row justify-between items-center gap-12 md:gap-0 relative"
+      className="w-full min-h-screen max-w-2xl px-6 sm:px-8 xl:px-0 pt-52 md:pt-0 flex flex-col justify-between md:flex-row relative"
     >
       <HeroActions />
       <HeroContent labels={labels} />

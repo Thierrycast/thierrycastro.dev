@@ -11,13 +11,13 @@ export default function HeroRocket() {
   const rocketSrc = theme === 'dark' ? '/rocket.svg' : '/rocket_light.svg';
 
   return (
-    <div className="w-full md:w-1/2 justify-center hidden md:flex">
+    <div className="w-1/2 justify-end hidden md:flex">
       <Image
         key={theme}
         src={rocketSrc}
         alt="Foguete"
-        width={300}
-        height={300}
+        width={350}
+        height={350}
         priority
       />
     </div>
