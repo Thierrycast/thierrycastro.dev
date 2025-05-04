@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useTransition } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { useLocale } from 'next-intl'
+import {useRouter, usePathname } from '../../i18n/navigation'; // <- next-intl
 import Icon from './Icon';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -16,17 +17,15 @@ export default function LanguageSwitcher({ className = '', direction = 'down' }:
 
   const router = useRouter();
   const pathname = usePathname();
-  const locale = pathname.split('/')[1];
+  const locale = useLocale();
 
   const availableLocales = ['pt', 'en'];
 
   const handleSelect = (newLocale: string) => {
     setOpen(false);
-    const segments = pathname.split('/');
-    segments[1] = newLocale;
-    const newPath = segments.join('/');
     startTransition(() => {
-      router.push(newPath);
+      // Navega para a mesma rota, mas com novo locale
+      router.push(pathname, { locale: newLocale });
     });
   };
 
@@ -36,7 +35,7 @@ export default function LanguageSwitcher({ className = '', direction = 'down' }:
         onClick={() => setOpen((prev) => !prev)}
         className="flex items-center gap-3 text-white/80 hover:text-white transition-colors px-2 py-1 rounded-md border bg-black/30 border-white/10 hover:border-primary-variant"
       >
-        <Icon name ="translate" size={18} />
+        <Icon name="translate" size={18} />
         <span className="uppercase text-xs">{locale}</span>
       </button>
 

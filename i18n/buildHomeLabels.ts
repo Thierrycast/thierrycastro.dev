@@ -1,7 +1,16 @@
 import { getTranslations } from 'next-intl/server';
 
 export async function buildHomeLabels(locale: string) {
-  const t = (ns: string) => getTranslations({ locale, namespace: ns });
+  const namespaces = [
+    'Header',
+    'HeroSection',
+    'AboutSection',
+    'ProjectsSection',
+    'TimelineSection',
+    'SkillsSection',
+    'ContactSection',
+    'Footer'
+  ];
 
   const [
     headerT,
@@ -12,16 +21,9 @@ export async function buildHomeLabels(locale: string) {
     skillsT,
     contactT,
     footerT
-  ] = await Promise.all([
-    t('Header'),
-    t('HeroSection'),
-    t('AboutSection'),
-    t('ProjectsSection'),
-    t('TimelineSection'),
-    t('SkillsSection'),
-    t('ContactSection'),
-    t('Footer')
-  ]);
+  ] = await Promise.all(
+    namespaces.map((ns) => getTranslations({ locale, namespace: ns }))
+  );
 
   return {
     header: {
@@ -51,9 +53,11 @@ export async function buildHomeLabels(locale: string) {
     projects: {
       badge: projectsT('badge'),
       title: projectsT('title'),
-      projects: Array.from({ length: 6 }, (_, i) => ({
-        title: projectsT(`projects.${i}.title`),
-        description: projectsT(`projects.${i}.description`),
+      projects: (projectsT.raw('projects') as {
+        title: string;
+        description: string;
+      }[]).map((project, index) => ({
+        ...project,
         image: `/images/${[
           'ecommerce',
           'dashboard',
@@ -61,19 +65,16 @@ export async function buildHomeLabels(locale: string) {
           'finance',
           'social',
           'fitness'
-        ][i]}.png`
+        ][index]}.png`
       }))
     },
 
     timeline: {
       badge: timelineT('badge'),
       title: timelineT('title'),
-      companies: (await getTranslations({ locale, namespace: 'TimelineSection' })).raw('companies') as unknown as {
+      companies: timelineT.raw('companies') as {
         company: string;
-        experiences: {
-          role: string;
-          description: string;
-        }[];
+        experiences: { role: string; description: string }[];
       }[]
     },
 
@@ -85,10 +86,10 @@ export async function buildHomeLabels(locale: string) {
     contact: {
       badge: contactT('badge'),
       title: contactT('title'),
-      contacts: Array.from({ length: 4 }, (_, i) => ({
-        label: contactT(`contacts.${i}.label`),
-        value: contactT(`contacts.${i}.value`)
-      }))
+      contacts: contactT.raw('contacts') as {
+        label: string;
+        value: string;
+      }[]
     },
 
     footer: {
